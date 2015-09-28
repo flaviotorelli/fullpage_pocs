@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Protótipo Web Food Picker v0</title>
+
+    <link rel="stylesheet" type="text/css" href="libs/animate/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="libs/fullpage/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/examples.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.modal.css" />
+    <link href="libs/formstone/dist/css/tooltip.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="libs/jquery_modal/jquery.simplemodal.1.4.4.min.js"></script>
+
+    <script type="text/javascript" src="libs/fullpage/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="js/examples.js"></script>
+
+    <script src="libs/formstone/dist/js/core.js"></script>
+    <script src="libs/formstone/dist/js/tooltip.js"></script>
+
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        
+        $('#fullpage').fullpage({
+          sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+          anchors: ['a', 'b', 'c'],
+          menu: '#menu',
+          continuousVertical: false
+        });
+      
+        $("input[type=checkbox], input[type=radio]").checkbox();
+        $("input[type=number]").number();
+        $("#xyz").tooltip({
+          direction: "top"
+        });
+
+        $('#xyz').click(function() {
+          $(".overlay-modal").modal();
+        });
+
+        $('#animated1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
+        function doSomething(e) {
+          //$('#animated2').addClass('animated wobble');
+          e.preventDefault();
+          $.fn.fullpage.moveSectionDown();
+        }
+
+      });
+    </script>
+
+  </head>
+  <body>
+    
+    <ul id="menu">
+      <li data-menuanchor="a" class="active"><a href="#a">A</a></li>
+      <li data-menuanchor="b"><a href="#b">B</a></li>
+      <li data-menuanchor="c"><a href="#c">C</a></li>
+    </ul>
+
+    <div id="fullpage">
+      <div class="section " id="section0">
+        <h1 id="animated1" class="animated slideOutUp">Example</h1>
+        <div class="intro">Ioioioi oioioioi oioioioi oioioio ioioioi oioioio.</div>
+      </div>
+      <div class="section" id="section1">
+        <h1 class="animated zoomInUp">Animation</h1>
+        <div class="intro">
+          <p>Uiui uiuiuiuiuiuiui uiuiui uiui uiuiuiu iuiu iuiu iuiu iui uiuiu.</p>
+        </div>
+      </div>
+      <div class="section" id="section2">
+          <div class="intro animated jello">
+            <p>Jkjkjkjkj kjkjkjk jkjkjkjkjk jkjkjk jkjkj kjkjkjkjkj kjkjk jkk.</p>
+          </div>
+          
+      </div>
+    </div>
+
+    <div class="overlay-modal">Ioioi oioioio ioioio ioioioio.</div>
+
+  </body>
+</html>
