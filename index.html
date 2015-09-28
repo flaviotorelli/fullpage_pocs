@@ -35,8 +35,6 @@
           continuousVertical: false
         });
       
-        $("input[type=checkbox], input[type=radio]").checkbox();
-        $("input[type=number]").number();
         $("#xyz").tooltip({
           direction: "top"
         });
@@ -46,8 +44,8 @@
         });
 
         $('#animated1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
+        
         function doSomething(e) {
-          //$('#animated2').addClass('animated wobble');
           e.preventDefault();
           $.fn.fullpage.moveSectionDown();
         }
@@ -77,7 +75,7 @@
       </div>
       <div class="section" id="section2">
           <div class="intro animated jello">
-            <p>Jkjkjkjkj kjkjkjk jkjkjkjkjk jkjkjk jkjkj kjkjkjkjkj kjkjk jkk.</p>
+            <p>Jkjkjkjkj kjkjkjk jkjkjkjkjk <a id="xyz" href="#">click here</a> jkjkjk jkjkj kjkjkjkjkj kjkjk jkk.</p>
           </div>
           
       </div>
